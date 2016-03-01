@@ -34,6 +34,20 @@
 	<%= image_tag("nom_logo-02.png", size:"350x300", :alt => "laptop") %>
 	</div>
 
+  <% if current_user %>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        </div>
+        <ul class="nav navbar-nav">
+    
+        <li><a href="/sessions/<%=current_user.id%>" data-method="delete"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+   <% end %>
+
+
 <%= yield %>
 
 </body>

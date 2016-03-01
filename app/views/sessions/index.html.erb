@@ -1,0 +1,63 @@
+<div class ="container">
+			<h3>Register</h3>
+
+			<form role="form" action ="/users" method ="post">
+				<input name ="authenticity_token" value ="<%= form_authenticity_token%>" type="hidden">
+			  <div class="form-group">
+			 	<label for="first_name">Name:</label>
+			    <input type="text" class="form-control" id="name" name="user[name]">
+			  </div>
+			  <div class="form-group">
+			 	<label for="alias">Alias:</label>
+			    <input type="text" class="form-control" id="alias" name="user[alias]">
+			  </div>
+			  <div class="form-group">
+			 	<label for="email">Email address:</label>
+			    <input type="email" class="form-control" id="email" name="user[email]">
+			  </div>
+			  <div class="form-group">
+			    <label for="pwd">Password:</label>
+			    <input type="password" class="form-control" id="pwd" name="user[password]">
+			  </div>
+			  <div class="form-group">
+			    <label for="pwd">Password Confirmation:</label>
+			    <input type="password" class="form-control" id="pwd_c" name="user[password_confirmation]">
+			  </div>
+			  <button type="submit" class="btn btn-default">Register</button>
+			</form>
+			<%if flash[:mistakes]%>
+			<%flash[:mistakes].each do |mes| %>
+				<p style="color: white;"><%=mes%></p>			
+			<%end%>
+		<%end%>
+		
+		</div>
+		
+		
+		<div class ="col-sm-3" id="login">	
+			<h3>Login</h3>
+			<form role="form" action ="/sessions" method ="post">
+				<input name ="authenticity_token" value ="<%= form_authenticity_token%>" type="hidden">
+			  <div class="form-group">
+			    <label for="email">Email address:</label>
+			    <input type="email" class="form-control" id="email" name="email">
+			  </div>
+			  <div class="form-group">
+			    <label for="pwd">Password:</label>
+			    <input type="password" class="form-control" id="pwd" name="password">
+			  </div>
+
+			  <button type="submit" class="btn btn-default">Log In</button>
+			</form>
+
+		<%if flash[:loginmistakes]%>
+			<%flash[:loginmistakes].each do |mes| %>
+			<p style="color: white;"><%=mes%></p>
+			<%end%>
+		<%end%>
+
+	</div>
+	
+	</div>
+
+</div>

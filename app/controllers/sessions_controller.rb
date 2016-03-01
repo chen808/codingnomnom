@@ -1,4 +1,8 @@
 class SessionsController < ApplicationController
+  
+  def index
+  end
+
 	def create
   		@user = User.find_by(email: params[:email])
 
@@ -13,9 +17,7 @@ class SessionsController < ApplicationController
   	
   	def destroy
     	logout_user
-    	redirect_to '/'
+    	redirect_to '/login'
     end
 end
 
-
-end
