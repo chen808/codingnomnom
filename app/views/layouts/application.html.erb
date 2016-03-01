@@ -14,9 +14,25 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  
+
+<style>
+	#topBar{
+		height: 300px;
+		background-color: red;
+	}
+</style>
+
 </head>
 <body>
+
+
+<div id="topBar">
+</div>
+
+<!-- NomNom Logo -->
+	<div id="nomnomlogo">
+	<%= image_tag("nom_logo-02.png", size:"350x300", :alt => "laptop") %>
+	</div>
 
 <%= yield %>
 
