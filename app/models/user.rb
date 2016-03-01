@@ -1,3 +1,4 @@
 class User < ActiveRecord::Base
-  has_secure_password
+	has_many :contents
+  	has_secure_password
 end
