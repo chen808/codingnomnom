@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-	def index
+	def login
 	end
 
 	def create
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 			user.save
 			session[:user_id] = user.id
 			 
-			redirect_to '/profile' % session[:user_id]
+			redirect_to '/profile' 
 		else
 			flash[:mistakes] = user.errors.full_messages
 			redirect_to '/login'

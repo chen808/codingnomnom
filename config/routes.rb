@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'contents#index'
 
-  get '/login' => 'sessions#index'
+  get '/login' => 'users#login'
   get '/profile' => 'users#show'
   get '/newrecipe' => 'contents#create_page'
   get '/recipe' => 'contents#show'
