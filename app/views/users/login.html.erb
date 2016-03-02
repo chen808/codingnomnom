@@ -42,7 +42,7 @@
 	<!-- flash error messages if input fields does not match validation specs -->
 	<%if flash[:mistakes]%>
 		<%flash[:mistakes].each do |mes| %>
-			<p style="color: white;"><%=mes%></p>			
+			<p style="color: gray;"><%=mes%></p>			
 		<%end%>
 	<%end%>
 		
@@ -70,7 +70,7 @@
 
 	<%if flash[:loginmistakes]%>
 		<%flash[:loginmistakes].each do |mes| %>
-		<p style="color: white;"><%=mes%></p>
+		<p style="color: gray;"><%=mes%></p>
 		<%end%>
 	<%end%>
 
