@@ -3,6 +3,13 @@
 		a#loginButton{
 			margin-left: 115px;
 		}
+
+		#sideBarLang{
+			margin-left: 20px;
+		}
+		form{
+			width: 300px;
+		}
 	</style>
 </head>
 
@@ -10,9 +17,23 @@
 
 	<a href="/login" id="loginButton">Log In</a><br>
 
+	<!-- Dropdown Menu Here, will take user to language specific page -->
+		<input name='authenticity_token' value="<%=form_authenticity_token %>" type="hidden">
+    	<label for='name'>Look for a particular topic: <br><input type='text' name='name' id='name'></label><br>
+		<input type="submit" value="Nom Nom Time!" class="comment_button">
+		</div>
+    
+
+	<!-- article links  -->
+	<div id="sideBarLang">
+		<h4><a href="#"><%= image_tag("programming_logos_ruby.png", size:"50x50", :alt => "nomnomlogo") %> Ruby</a></h4>
+		<h4><a href="#"><%= image_tag("programming_logos_rails.png", size:"50x50", :alt => "nomnomlogo") %> Rails</a></h4>
+		<h4><a href="#"><%= image_tag("programming_logos_python.png", size:"50x50", :alt => "nomnomlogo") %> Python</a></h4>
+		<h4><a href="#"><%= image_tag("programming_logos_github.png", size:"50x50", :alt => "nomnomlogo") %> Github</a></h4>
+	</div>
+
+
 	<div class="form-group">
-		
-	
 		<!-- Dropdown menu to show different languages -->
 		<label for='languages'>Language:<br>
 	    		<select name="language">
@@ -26,14 +47,12 @@
 				</select>
     	</label><br>
 
-
     	<!-- Name of Article -->
 		<label for="title">Title:</label>
 		<input type="text" class="form-control" id="title" name:"title">
 
 		<label for="description">Description:</label><br>
 		<textarea rows="4" cols="33"> </textarea><br>
-
 
 		<!-- 20 steps -->
 		<label for="step1">Step 1:</label>

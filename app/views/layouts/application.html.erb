@@ -6,81 +6,40 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-  <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 <style>
 	#topBar{
-		height: 300px;
+		/*height: 300px;*/
 		background-color: red;
+		padding: 10px 0px;
 	}
 
 	#nomnomlogo{
-		margin-top: 20px;
+		/*margin-top: 20px;*/
 		margin-left: 30px;
-	}
-	#searchBar{
-		float:right;
-		margin-top: -60px;
-		margin-right: 30px;
-	}
-	.btn-group{
-		float:right;
-		margin-top: -100px;
-		margin-right: 140px;
+		display:inline-block;
 	}
 </style>
 
 </head>
 <body>
 <div id="topBar">
-<div class="row">
 
-<!-- NomNom Logo -->
+	<!-- NomNom Logo -->
 	<div id="nomnomlogo">
 	<%= image_tag("nom_logo-02.png", size:"300x250", :alt => "nomnomlogo") %>
 	</div>
 
-	<!-- Dropdown Menu Here, will take user to language specific page -->
-	<div class="btn-group">
-		<button type="button" class="btn btn-default">Go to specific language</button>
-		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			<span class="caret"></span>
-			<span class="sr-only">Toggle Dropdown</span>
-		</button>
 
-		<ul class="dropdown-menu">
-			<li><a href="#">Ruby/Rails</a></li>
-			<li><a href="#">Python</a></li>
-			<li><a href="#">Php</a></li>
-			<li><a href="#">Git/GitHup</a></li>
-			<li><a href="#">Javascript</a></li>
-		</ul>
-	</div>
-
-
-	<!-- Adding search bar here -->
-<div class="col-lg-3" id="searchBar">
-	<h5>Looking for a particular topic?</h5>
-    <div class="input-group">
-
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Nom!</button>
-      </span>
-      <input type="text" class="form-control" placeholder="Search for...">
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-</div>
-
-
-
-</div>
+</div><!-- End of 'topbar' container -->
 
 
 
