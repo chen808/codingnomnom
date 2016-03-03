@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/recipe' => 'contents#show'
   get '/editprofile' => 'users#edit'
   post '/sessions' => 'sessions#create'
+  post '/create_new_recipe' => 'contents#new_recipe'
   post '/users' => 'users#create'
   delete '/sessions/:id' => 'sessions#destroy'
 
