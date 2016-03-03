@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   post '/create_new_recipe' => 'contents#new_recipe'
   post '/users' => 'users#create'
+  patch '/updateprofile' => 'users#update'
+  delete '/users/:id' => 'users#destroy'
   delete '/sessions/:id' => 'sessions#destroy'
 
 
