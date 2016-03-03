@@ -18,6 +18,21 @@ class UsersController < ApplicationController
 		end 
 	end
 
+	def edit
+		@user = User.find(session[:user_id])
+	end
+
+	def update
+		user = User.find(current_user.id)
+		user.update_attributes(user_params)
+		redirect_to '/editprofile'
+	end
+
+	def destroy
+		User.find(params[:id]).destroy
+		session.clear
+		redirect_to '/login'
+	end
 	
 
 	private

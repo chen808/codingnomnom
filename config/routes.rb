@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/editprofile' => 'users#edit'
   post '/sessions' => 'sessions#create'
   post '/users' => 'users#create'
+  patch '/updateprofile' => 'users#update'
+  delete '/users/:id' => 'users#destroy'
   delete '/sessions/:id' => 'sessions#destroy'
 
 
