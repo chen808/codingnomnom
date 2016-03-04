@@ -14,7 +14,6 @@ class ContentsController < ApplicationController
 		# render :text => content_params
 		@content = Content.create(content_params)
 		redirect_to '/profile'
-		# render :text => @content[0]	
 	end
 
 	def edit

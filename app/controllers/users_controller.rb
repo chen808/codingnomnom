@@ -3,6 +3,11 @@ class UsersController < ApplicationController
 	def login
 	end
 
+	def show
+		#grabbing all the recipes from current user
+		@current_user_recipes = Content.where(user_id:session[:user_id])
+	end
+
 	def index
 	end
 
