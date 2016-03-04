@@ -14,8 +14,8 @@
 <form action='/create_new_recipe' method='post' role="form" class="col-md-5">
 	<input name='authenticity_token' value="<%=form_authenticity_token %>" type="hidden">
 	<input name='authenticity_token' value="<%=form_authenticity_token %>" type="hidden">
-
-	<input type="hidden" name="content[user_id]" value="@user">
+	<input type = 'hidden' value = '<%= current_user.id %>' name = 'content[user_id]'>
+	
 
 
 	<div class="form-group">
@@ -36,72 +36,41 @@
 
     	<!-- Name of Article -->
 		<label for="title">Title:</label>
-		<input type="text" class="form-control" id="title" name:"content[title]">
+		<input type="text" class="form-control"  name="content[title]">
 
 		<label for="description">Description:</label><br>
-		<textarea rows="4" cols="33"> </textarea><br>
+		<input type = "text" rows="4" cols="33" name="content[description]">
 
 		<!-- 20 steps -->
 		<label for="step1">Step 1:</label>
-		<input type="text" class="form-control" id="step1" name:"content[step1]">
+		<input type="text" class="form-control"  name="content[step1]">
 
 		<label for="step2">Step 2:</label>
-		<input type="text" class="form-control" id="step2" name:"content[step2]">
+		<input type="text" class="form-control"  name="content[step2]">
 
 		<label for="step3">Step 3:</label>
-		<input type="text" class="form-control" id="step3" name:"content[step3]">
+		<input type="text" class="form-control"  name="content[step3]">
 
 		<label for="step4">Step 4:</label>
-		<input type="text" class="form-control" id="step4" name:"content[step4]">
+		<input type="text" class="form-control"  name="content[step4]">
 
 		<label for="step5">Step 5:</label>
-		<input type="text" class="form-control" id="step5" name:"content[step5]">
+		<input type="text" class="form-control"  name="content[step5]">
 
 		<label for="step6">Step 6:</label>
-		<input type="text" class="form-control" id="step6" name:"content[step6]">
+		<input type="text" class="form-control"  name="content[step6]">
 
 		<label for="step7">Step 7:</label>
-		<input type="text" class="form-control" id="step7" name:"content[step7]">
+		<input type="text" class="form-control"  name="content[step7]">
 
 		<label for="step8">Step 8:</label>
-		<input type="text" class="form-control" id="step8" name:"content[step8]">
+		<input type="text" class="form-control"  name="content[step8]">
 
 		<label for="step9">Step 9:</label>
-		<input type="text" class="form-control" id="step9" name:"content[step9]">
+		<input type="text" class="form-control"  name="content[step9]">
 
 		<label for="step10">Step 10:</label>
-		<input type="text" class="form-control" id="step10" name:"content[step10]">
-
-		<label for="step11">Step 11:</label>
-		<input type="text" class="form-control" id="step11" name:"content[step11]">
-
-		<label for="step12">Step 12:</label>
-		<input type="text" class="form-control" id="step12" name:"content[step12]">
-
-		<label for="step13">Step 13:</label>
-		<input type="text" class="form-control" id="step13" name:"content[step13]">
-
-		<label for="step14">Step 14:</label>
-		<input type="text" class="form-control" id="step14" name:"content[step14]">
-
-		<label for="step15">Step 15:</label>
-		<input type="text" class="form-control" id="step15" name:"content[step15]">
-
-		<label for="step16">Step 16:</label>
-		<input type="text" class="form-control" id="step16" name:"content[step16]">
-
-		<label for="step17">Step 17:</label>
-		<input type="text" class="form-control" id="step17" name:"content[step17]">
-
-		<label for="step18">Step 18:</label>
-		<input type="text" class="form-control" id="step18" name:"content[step18]">
-
-		<label for="step19">Step 19:</label>
-		<input type="text" class="form-control" id="step19" name:"content[step19]">
-
-		<label for="step20">Step 20:</label>
-		<input type="text" class="form-control" id="step10" name:"content[step20]">
-
+		<input type="text" class="form-control"  name="content[step10]">
 
 		<button type="submit" class="btn btn-default">Submit</button>
 	</div>
