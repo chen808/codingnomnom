@@ -9,7 +9,8 @@ class UsersController < ApplicationController
 	end
 
 	def index
-	end
+		
+ 	end
 
 	def create
 		user = User.new(user_params)

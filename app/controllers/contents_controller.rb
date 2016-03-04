@@ -1,6 +1,8 @@
 class ContentsController < ApplicationController
 
 	def index
+		@current_five_articles = Content.last(5)
+		#@alias = Content.where()
 	end
 
 	def show

@@ -11,13 +11,13 @@
 		form{
 			width: 300px;
 		}
+		#recentNoms h4{
+			padding-top: 20px;
+		}
 	</style>
 </head>
 
 <form role="form" class="col-md-3">
-
-
-
 	<!-- Dropdown Menu Here, will take user to language specific page -->
 		<input name='authenticity_token' value="<%=form_authenticity_token %>" type="hidden">
     	<label for='name'>Look for a particular topic: <br><input type='text' name='name' id='name'></label><br>
@@ -36,3 +36,19 @@
 		<h4><a href="#"><%= image_tag("programming_logos_css.png", size:"50x50", :alt => "nomnomlogo") %> CSS</a></h4>
 		<h4><a href="#"><%= image_tag("programming_logos_html5.png", size:"50x50", :alt => "nomnomlogo") %> Html 5</a></h4>
 	</div>
+</form>
+
+<!-- 5 Recent articles -->
+<h2>Recent Nom Noms</h2>
+<div id="recentNoms">
+	<% @current_five_articles.each do |x| %>
+		<h4><a href="/recipe/<%= x.id %>"><%= x.title %></a></h4>
+		<h6>Created by: <%= x.user.alias %></h6>
+		<h6><a href="#"><%= x.language %> | <a href="#"><%= x.created_at %></a></h6>
+	<% end %>
+</div>
+
+
+
+
+
