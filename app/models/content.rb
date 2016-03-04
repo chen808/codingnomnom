@@ -2,6 +2,6 @@ class Content < ActiveRecord::Base
   belongs_to :users
 
 
-	validates :title, presence: true, length: {minimum: 8}
+	validates :title, :language,  presence: true
 	
 end

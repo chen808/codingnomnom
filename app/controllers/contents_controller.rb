@@ -11,10 +11,9 @@ class ContentsController < ApplicationController
 	end
 
 	def new_recipe
-		content = Content.create(content_params)
-		# redirect_to '/profile'
-		render :text => content.title
-		
+		Content.create(content_params)
+		redirect_to '/profile'
+
 	end
 
 
