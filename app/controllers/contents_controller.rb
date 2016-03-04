@@ -17,6 +17,9 @@ class ContentsController < ApplicationController
 		# render :text => @content[0]	
 	end
 
+	def edit
+		@post = Content.find(params[:id])
+	end
 
 	private
 	def content_params

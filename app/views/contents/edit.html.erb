@@ -1,0 +1,79 @@
+
+
+<div class = "container">
+	<div class = "row">
+		<div class ="col-sm-3">	
+			<h1>Edit Post</h1>
+			<form role="form" action ="/updateprofile" method ="post">
+				<input name ="authenticity_token" value ="<%= form_authenticity_token%>" type="hidden">
+				<input name ="_method" value ="patch" type="hidden">
+
+				<input type = 'hidden' value = '<%= current_user.id %>' name = 'content[user_id]'>
+
+				<div class="form-group">
+					<label for="language">Language:</label>
+					<input type="text" class="form-control" id="name" name="content[language]" value = "<%= @post.language%>">
+				</div>
+
+				<div class="form-group">
+					<label for="title">Title:</label>
+					<input type="text" class="form-control" id="title" name="content[title]" value = "<%= @post.title%>">
+				</div>
+
+				<div class="form-group">
+					<label for="description">Description:</label>
+					<input type="text" class="form-control" id="description" name="content[step1]" value = "<%= @post.description%>">
+				</div>
+
+				<div class="form-group">
+					<label for="step1">Step 1:</label>
+					<input type="text" class="form-control" id="step1" name="content[step1]" value = "<%= @post.step1%>">
+				</div>
+
+				<div class="form-group">
+					<label for="step2">Step 2:</label>
+					<input type="text" class="form-control" id="step2" name="content[step2]" value = "<%= @post.step2%>">
+				</div>
+
+				<div class="form-group">
+					<label for="step3">Step 3:</label>
+					<input type="text" class="form-control" id="step3" name="content[step3]" value = "<%= @post.step3%>">
+				</div>
+
+				<div class="form-group">
+					<label for="step4">Step 4:</label>
+					<input type="text" class="form-control" id="step4" name="content[step4]" value = "<%= @post.step4%>">
+				</div>
+
+				<div class="form-group">
+					<label for="step5">Step 5:</label>
+					<input type="text" class="form-control" id="step5" name="content[step5]" value = "<%= @post.step5%>">
+				</div>
+
+				<div class="form-group">
+					<label for="step6">Step 6:</label>
+					<input type="text" class="form-control" id="step6" name="content[step6]" value = "<%= @post.step6%>">
+				</div>
+
+				<div class="form-group">
+					<label for="step7">Step 7:</label>
+					<input type="text" class="form-control" id="step7" name="content[step7]" value = "<%= @post.step7%>">
+				</div>
+
+				<div class="form-group">
+					<label for="step8">Step 8:</label>
+					<input type="text" class="form-control" id="step8" name="content[step8]" value = "<%= @post.step8%>">
+				</div>
+
+				<div class="form-group">
+					<label for="step9">Step 9:</label>
+					<input type="text" class="form-control" id="step9" name="content[step9]" value = "<%= @post.step9%>">
+				</div>
+
+				<div class="form-group">
+					<label for="step10">Step 10:</label>
+					<input type="step10" class="form-control" id="step10" name="content[step1]" value = "<%= @post.step10%>">
+				</div>
+
+				<button type="submit" class="btn btn-default">Update</button>
+			</form>
