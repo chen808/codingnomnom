@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/login' => 'users#login'
   get '/profile' => 'users#show'
   get '/newrecipe' => 'contents#create_page'
-  get '/recipe' => 'contents#show'
+  get '/recipe/:id' => 'contents#show'
   get '/editprofile' => 'users#edit'
   get '/editpost/:id' => 'contents#edit'
   post '/sessions' => 'sessions#create'

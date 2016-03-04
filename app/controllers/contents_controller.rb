@@ -4,6 +4,7 @@ class ContentsController < ApplicationController
 	end
 
 	def show
+		@post = Content.find(params[:id])
 	end
 
 	def create_page
