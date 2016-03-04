@@ -20,6 +20,11 @@ class ContentsController < ApplicationController
 		@post = Content.find(params[:id])
 	end
 
+	def update
+		Content.find(params[:id]).update_attributes(content_params)
+		redirect_to '/editpost/%s' % params[:id]
+	end
+
 	private
 	def content_params
 		params.require(:content).permit(:user_id, :language, :title, :description, :step1, :step2, :step3, :step4, :step5, :step6, :step7, :step8, :step9, :step10)

@@ -4,7 +4,7 @@
 	<div class = "row">
 		<div class ="col-sm-3">	
 			<h1>Edit Post</h1>
-			<form role="form" action ="/updateprofile" method ="post">
+			<form role="form" action ="/updatepost/<%= @post.id %>" method ="post">
 				<input name ="authenticity_token" value ="<%= form_authenticity_token%>" type="hidden">
 				<input name ="_method" value ="patch" type="hidden">
 
@@ -22,7 +22,7 @@
 
 				<div class="form-group">
 					<label for="description">Description:</label>
-					<input type="text" class="form-control" id="description" name="content[step1]" value = "<%= @post.description%>">
+					<input type="text" class="form-control" id="description" name="content[description]" value = "<%= @post.description%>">
 				</div>
 
 				<div class="form-group">
@@ -72,7 +72,7 @@
 
 				<div class="form-group">
 					<label for="step10">Step 10:</label>
-					<input type="step10" class="form-control" id="step10" name="content[step1]" value = "<%= @post.step10%>">
+					<input type="step10" class="form-control" id="step10" name="content[step10]" value = "<%= @post.step10%>">
 				</div>
 
 				<button type="submit" class="btn btn-default">Update</button>
