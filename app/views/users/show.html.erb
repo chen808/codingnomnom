@@ -1,31 +1,52 @@
 <!-- User Dashboard -->
-<h1>Hi, <%=current_user%></h1>
-
-<a href ='/newrecipe' >Create new recipe</a>
-
-
+<h1>Hi, <%=current_user.name %></h1>
 
 
 <!-- Show the recipe user has created and button to edit -->
-	<table class="table table-striped">
+<table class="col-md-6">
 	<h4>Here are the nom nom you created!</h4>
-		<thead>
-			<tr>
+	<thead>
+		<tr>
 			<th>Language</th>
 			<th>Topic</th>
 			<th>Day Created</th>
 			<th>Action</th>
-			</tr>
-		</thead>
-
-		<tbody>
-		<tr>
-			<td>*Language here</td>
-			<td>*topic here</td>
-			<td>*day created</td>
-			<td>*delete</td>
 		</tr>
+	</thead>
+
+	<tbody>
+	<% @current_user_recipes.each do |x| %>
+		<!-- following if statements checks to see what language and brings up the respective logo -->
+		<tr>
+		<% if x.language == "python" %>
+			<td><a href="#"><%= image_tag("programming_logos_python.png", size:"50x50", :alt => "nomnomlogo") %> <%= x.language %></a></td>
+		<% elsif x.language == "ruby" %>
+			<td><a href="#"><%= image_tag("programming_logos_ruby.png", size:"50x50", :alt => "nomnomlogo") %> <%= x.language %></a></td>
+		<% elsif x.language == "rails" %>
+			<td><a href="#"><%= image_tag("programming_logos_rails.png", size:"50x50", :alt => "nomnomlogo") %> <%= x.language %></a></td>
+		<% elsif x.language == "github" %>
+			<td><a href="#"><%= image_tag("programming_logos_github.png", size:"50x50", :alt => "nomnomlogo") %> <%= x.language %></a></td>
+		<% elsif x.language == "javascript" %>
+			<td><a href="#"><%= image_tag("programming_logos_javascript.png", size:"50x50", :alt => "nomnomlogo") %> <%= x.language %></a></td>
+		<% elsif x.language == "css" %>
+			<td><a href="#"><%= image_tag("programming_logos_css.png", size:"50x50", :alt => "nomnomlogo") %> <%= x.language %></a></td>
+		<% elsif x.language == "html" %>
+			<td><a href="#"><%= image_tag("programming_logos_html5.png", size:"50x50", :alt => "nomnomlogo") %> <%= x.language %></a></td>
+		<% end %>
+
+		<!-- the following link will take user to topic page -->
+		<td><a href="#"><%= x.title %></a></td>
+		<td><%= x.created_at %></td>
+
+		<!-- the following link will allow user to edit this recipe -->
+		<td><a href="/editpost/<%= x.id %>">Edit this recipe</td>
+		</tr>
+	<% end %>
+
+	</tbody>
+</table>
 
 
-		</tbody>
-	</table>
+
+
+
