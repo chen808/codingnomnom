@@ -19,19 +19,25 @@
 		<!-- following if statements checks to see what language and brings up the respective logo -->
 		<tr>
 		<% if x.language == "python" %>
-			<td><a href="#"><%= image_tag("programming_logos_python.png", size:"50x50", :alt => "nomnomlogo") %> <%= x.language %></a></td>
+			<td><a href="#"><%= image_tag("programming_logos_python.png", size:"50x50", :alt => "python") %> <%= x.language %></a></td>
 		<% elsif x.language == "ruby" %>
-			<td><a href="#"><%= image_tag("programming_logos_ruby.png", size:"50x50", :alt => "nomnomlogo") %> <%= x.language %></a></td>
+			<td><a href="#"><%= image_tag("programming_logos_ruby.png", size:"50x50", :alt => "ruby") %> <%= x.language %></a></td>
 		<% elsif x.language == "rails" %>
-			<td><a href="#"><%= image_tag("programming_logos_rails.png", size:"50x50", :alt => "nomnomlogo") %> <%= x.language %></a></td>
+			<td><a href="#"><%= image_tag("programming_logos_rails.png", size:"50x50", :alt => "rails") %> <%= x.language %></a></td>
 		<% elsif x.language == "github" %>
-			<td><a href="#"><%= image_tag("programming_logos_github.png", size:"50x50", :alt => "nomnomlogo") %> <%= x.language %></a></td>
+			<td><a href="#"><%= image_tag("programming_logos_github.png", size:"50x50", :alt => "gihub") %> <%= x.language %></a></td>
 		<% elsif x.language == "javascript" %>
-			<td><a href="#"><%= image_tag("programming_logos_javascript.png", size:"50x50", :alt => "nomnomlogo") %> <%= x.language %></a></td>
+			<td><a href="#"><%= image_tag("programming_logos_javascript.png", size:"50x50", :alt => "javascript") %> <%= x.language %></a></td>
 		<% elsif x.language == "css" %>
-			<td><a href="#"><%= image_tag("programming_logos_css.png", size:"50x50", :alt => "nomnomlogo") %> <%= x.language %></a></td>
+			<td><a href="#"><%= image_tag("programming_logos_css.png", size:"50x50", :alt => "css") %> <%= x.language %></a></td>
 		<% elsif x.language == "html" %>
-			<td><a href="#"><%= image_tag("programming_logos_html5.png", size:"50x50", :alt => "nomnomlogo") %> <%= x.language %></a></td>
+			<td><a href="#"><%= image_tag("programming_logos_html5.png", size:"50x50", :alt => "html") %> <%= x.language %></a></td>
+		<% elsif x.language == "jquery" %>
+			<td><a href="#"><%= image_tag("programming_logos_jquery.png", size:"50x50", :alt => "jquery") %> <%= x.language %></a></td>
+		<% elsif x.language == "php" %>
+			<td><a href="#"><%= image_tag("programming_logos_php.png", size:"50x50", :alt => "php") %> <%= x.language %></a></td>
+		<% elsif x.language == "mysql" %>
+			<td><a href="#"><%= image_tag("programming_logos_mysql.png", size:"50x50", :alt => "mysql") %> <%= x.language %></a></td>
 		<% end %>
 
 		<!-- the following link will take user to topic page -->
