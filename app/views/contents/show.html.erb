@@ -27,16 +27,45 @@
 
 
 <!-- recipe steps -->
-<h2>Step 1: <%= @this_article.step1 %></h2>
-<h2>Step 2: <%= @this_article.step2 %></h2>
-<h2>Step 3: <%= @this_article.step3 %></h2>
-<h2>Step 4: <%= @this_article.step4 %></h2>
-<h2>Step 5: <%= @this_article.step5 %></h2>
-<h2>Step 6: <%= @this_article.step6 %></h2>
-<h2>Step 7: <%= @this_article.step7 %></h2>
-<h2>Step 8: <%= @this_article.step8 %></h2>
-<h2>Step 9: <%= @this_article.step9 %></h2>
-<h2>Step 10: <%= @this_article.step10 %></h2>
+<% if @this_article.step1.present? then %>
+	<h2>Step 1: <%= @this_article.step1 %></h2>
+<% end %>
+
+<% if @this_article.step2.present? then %>
+	<h2>Step 2: <%= @this_article.step2 %></h2>
+<% end %>
+
+<% if @this_article.step3.present? then %>
+	<h2>Step 3: <%= @this_article.step3 %></h2>
+<% end %>
+
+<% if @this_article.step4.present? then %>
+	<h2>Step 4: <%= @this_article.step4 %></h2>
+<% end %>
+
+<% if @this_article.step5.present? then %>
+	<h2>Step 5: <%= @this_article.step5 %></h2>
+<% end %>
+
+<% if @this_article.step6.present? then %>
+	<h2>Step 6: <%= @this_article.step6 %></h2>
+<% end %>
+
+<% if @this_article.step7.present? then %>
+	<h2>Step 7: <%= @this_article.step7 %></h2>
+<% end %>
+
+<% if @this_article.step8.present? then %>
+	<h2>Step 8: <%= @this_article.step8 %></h2>
+<% end %>
+
+<% if @this_article.step9.present? then %>
+	<h2>Step 9: <%= @this_article.step9 %></h2>
+<% end %>
+
+<% if @this_article.step10.present? then %>
+	<h2>Step 10: <%= @this_article.step10 %></h2>
+<% end %>
 
 
 </div><!-- end article container -->
