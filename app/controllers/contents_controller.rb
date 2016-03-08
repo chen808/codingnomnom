@@ -16,8 +16,14 @@ class ContentsController < ApplicationController
 
 	def new_recipe
 		# render :text => content_params
-		@content = Content.create(content_params)
-		redirect_to '/profile'
+		@content = Content.new(content_params)
+		if @content.valid? == true
+			@content.save
+			redirect_to '/profile'
+		else
+			flash[:mistakes] = @content.errors.full_messages
+			redirect_to :back
+		end
 	end
 
 	def edit
