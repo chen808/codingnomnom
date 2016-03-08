@@ -10,8 +10,13 @@ class SessionsController < ApplicationController
       		session[:user_id] = @user.id
   			redirect_to '/profile' 
   		else
-  			flash[:loginmistakes] = ["Invalid Login"]
-  			redirect_to '/login' 
+        if User.find_by(email: params[:email]) == nil
+  			   flash[:loginmistakes] = ["Invalid email"]
+           redirect_to '/login' 
+        else
+          flash[:loginmistakes] = ["Invalid password"]
+  			 redirect_to '/login' 
+        end
   		end
   	end
   	
