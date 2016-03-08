@@ -19,7 +19,7 @@
 
 
 <!-- author of article, creation date -->
-<h5><%= @this_article.user.alias %> | <%= @this_article.created_at %></h5>
+<h5><%= @this_article.user.alias %> | <%= @this_article.created_at.strftime("%m/%d/%Y") %></h5>
 
 
 <!-- article description -->
