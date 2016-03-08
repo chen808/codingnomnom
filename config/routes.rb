@@ -16,5 +16,4 @@ Rails.application.routes.draw do
   delete '/users/:id' => 'users#destroy'
   delete '/sessions/:id' => 'sessions#destroy'
 
-
 end

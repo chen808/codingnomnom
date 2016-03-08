@@ -8,11 +8,18 @@
 		#sideBarLang{
 			margin-left: 20px;
 		}
+		#recentNoms{
+			margin-left: 40px;
+		}
 		form{
 			width: 300px;
 		}
 		#recentNoms h4{
 			padding-top: 20px;
+		}
+		#topicFinder{
+			margin-left: 20px;
+			padding-bottom: 10px;
 		}
 	</style>
 </head>
@@ -20,7 +27,8 @@
 <form role="form" class="col-md-3">
 	<!-- Dropdown Menu Here, will take user to language specific page -->
 		<input name='authenticity_token' value="<%=form_authenticity_token %>" type="hidden">
-    	<label for='name'>Look for a particular topic: <br><input type='text' name='name' id='name'></label><br>
+		<div id="topicFinder">
+    	<label for='name'>Looking for a particular topic: <br><input type='text' name='name' id='name'></label><br>
 		<input type="submit" value="Nom Nom Time!" class="comment_button">
 		</div>
     
@@ -35,12 +43,16 @@
 		<h4><a href="#"><%= image_tag("programming_logos_javascript.png", size:"50x50", :alt => "nomnomlogo") %> Javascript</a></h4>
 		<h4><a href="#"><%= image_tag("programming_logos_css.png", size:"50x50", :alt => "nomnomlogo") %> CSS</a></h4>
 		<h4><a href="#"><%= image_tag("programming_logos_html5.png", size:"50x50", :alt => "nomnomlogo") %> Html 5</a></h4>
+		<h4><a href="#"><%= image_tag("programming_logos_jquery.png", size:"50x50", :alt => "nomnomlogo") %> jQuery</a></h4>
+		<h4><a href="#"><%= image_tag("programming_logos_mysql.png", size:"50x50", :alt => "nomnomlogo") %> MySql</a></h4>
+		<h4><a href="#"><%= image_tag("programming_logos_php.png", size:"50x50", :alt => "nomnomlogo") %> Php</a></h4>
 	</div>
 </form>
 
 <!-- 5 Recent articles -->
-<h2>Recent Nom Noms</h2>
+
 <div id="recentNoms">
+	<h2>Recent Nom Noms</h2>
 	<% @current_five_articles.each do |x| %>
 		<h4><a href="/recipe/<%= x.id %>"><%= x.title %></a></h4>
 		<h6>Created by: <%= x.user.alias %></h6>

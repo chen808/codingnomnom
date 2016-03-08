@@ -1,5 +1,76 @@
-<h1>Title</h1>
-<h2>Content</h2>
+<head>
+	<style>
+		#article{
+			margin-left: 100px;
+			width: 500px;
+		}
+		h2{
+			margin: 30px 0px;
+		}
+
+	</style>
+</head>
+
+
+<div id="article">
+
+<!-- article title -->
+<h1><%= @this_article.title %></h1>
+
+
+<!-- author of article, creation date -->
+<h5><%= @this_article.user.alias %> | <%= @this_article.created_at %></h5>
+
+
+<!-- article description -->
+<h4><%= @this_article.description %></h4>
+
+
+<!-- recipe steps -->
+<% if @this_article.step1.present? then %>
+	<h2>Step 1: <%= @this_article.step1 %></h2>
+<% end %>
+
+<% if @this_article.step2.present? then %>
+	<h2>Step 2: <%= @this_article.step2 %></h2>
+<% end %>
+
+<% if @this_article.step3.present? then %>
+	<h2>Step 3: <%= @this_article.step3 %></h2>
+<% end %>
+
+<% if @this_article.step4.present? then %>
+	<h2>Step 4: <%= @this_article.step4 %></h2>
+<% end %>
+
+<% if @this_article.step5.present? then %>
+	<h2>Step 5: <%= @this_article.step5 %></h2>
+<% end %>
+
+<% if @this_article.step6.present? then %>
+	<h2>Step 6: <%= @this_article.step6 %></h2>
+<% end %>
+
+<% if @this_article.step7.present? then %>
+	<h2>Step 7: <%= @this_article.step7 %></h2>
+<% end %>
+
+<% if @this_article.step8.present? then %>
+	<h2>Step 8: <%= @this_article.step8 %></h2>
+<% end %>
+
+<% if @this_article.step9.present? then %>
+	<h2>Step 9: <%= @this_article.step9 %></h2>
+<% end %>
+
+<% if @this_article.step10.present? then %>
+	<h2>Step 10: <%= @this_article.step10 %></h2>
+<% end %>
+
+
+</div><!-- end article container -->
+
+
 
 <h1><%= @post.title %></h1>
 <p><%= @post.language %></p>

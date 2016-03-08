@@ -6,7 +6,8 @@ class ContentsController < ApplicationController
 	end
 
 	def show
-		@post = Content.find(params[:id])
+		# incoming id from views > contents > index.html.erb
+		@this_article = Content.find(params[:id])
 	end
 
 	def create_page
