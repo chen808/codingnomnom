@@ -56,7 +56,7 @@
 	<% @current_five_articles.each do |x| %>
 		<h4><a href="/recipe/<%= x.id %>"><%= x.title %></a></h4>
 		<h6>Created by: <%= x.user.alias %></h6>
-		<h6><a href="#"><%= x.language %> | <a href="#"><%= x.created_at %></a></h6>
+		<h6><a href="#"><%= x.language %> | <a href="#"><%= x.created_at.strftime("%m/%d/%Y") %></a></h6>
 	<% end %>
 </div>
 
