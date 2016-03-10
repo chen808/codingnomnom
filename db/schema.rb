@@ -38,13 +38,10 @@ ActiveRecord::Schema.define(version: 20160310024116) do
   add_index "contents", ["user_id"], name: "index_contents_on_user_id", using: :btree
 
   create_table "languages", force: :cascade do |t|
-    t.integer  "content_id"
     t.string   "lang"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "languages", ["content_id"], name: "index_languages_on_content_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -56,5 +53,4 @@ ActiveRecord::Schema.define(version: 20160310024116) do
   end
 
   add_foreign_key "contents", "users"
-  add_foreign_key "languages", "contents"
 end
