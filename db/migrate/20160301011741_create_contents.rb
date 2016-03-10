@@ -2,7 +2,7 @@ class CreateContents < ActiveRecord::Migration
   def change
     create_table :contents do |t|
       t.references :user, index: true
-      t.string :language
+      t.references :language
       t.string :title
       t.text :description
       t.string :step1
