@@ -1,0 +1,15 @@
+
+<style>
+	#recipes{
+		margin-left: 50px;
+	}
+</style>
+
+
+<h1><%= image_tag("programming_logos_ruby.png", size:"50x50", :alt => "nomnomlogo") %>Ruby Nom Noms</h1>
+<% @ruby_lang.each do |x| %>
+	<div id="recipes">
+		<h3><a href="/recipe/<%= x.id %>"><%= x.title %></a></h3>
+		<h6><%= x.description %></h6>
+	</div>
+<% end %>

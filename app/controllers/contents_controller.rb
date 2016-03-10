@@ -8,6 +8,7 @@ class ContentsController < ApplicationController
 	def show
 		# incoming id from views > contents > index.html.erb
 		@this_article = Content.find(params[:id])
+		
 	end
 
 	def create_page
@@ -18,6 +19,10 @@ class ContentsController < ApplicationController
 		# render :text => content_params
 		@content = Content.create(content_params)
 		redirect_to '/profile'
+	end
+
+	def show_ruby_pg
+		@ruby_lang = Content.where(language:"ruby")
 	end
 
 	def edit
