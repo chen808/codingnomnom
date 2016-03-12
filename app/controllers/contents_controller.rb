@@ -16,10 +16,12 @@ class ContentsController < ApplicationController
 	end
 
 	def new_recipe
-		# render :text => content_params
+		# render :text => lang_params
 		@content = Content.new(content_params)
 		if @content.valid? == true
 			@content.save
+			Content.last.update_attributes(language: Language.find_by(lang_params))
+			# render :text => lang_params
 			redirect_to '/profile'
 		else
 			flash[:mistakes] = @content.errors.full_messages
@@ -47,9 +49,11 @@ class ContentsController < ApplicationController
 
 	private
 	def content_params
-		params.require(:content).permit(:user_id, :language, :title, :description, :step1, :step2, :step3, :step4, :step5, :step6, :step7, :step8, :step9, :step10)
+		params.require(:content).permit(:user_id, :title, :description, :step1, :step2, :step3, :step4, :step5, :step6, :step7, :step8, :step9, :step10)
 	end
-
+	def lang_params
+		params.require(:language).permit(:lang)
+	end
 
 	
 end
