@@ -6,6 +6,8 @@ class UsersController < ApplicationController
 	def show
 		#grabbing all the recipes from current user
 		@current_user_recipes = Content.where(user_id:session[:user_id])
+		#@current_user_recipes = Content.where(language:Language.find(params[:id]))
+		# @test_lang_all = Language.all
 	end
 
 	def index
