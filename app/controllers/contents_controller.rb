@@ -18,6 +18,7 @@ class ContentsController < ApplicationController
 	def new_recipe
 		# render :text => lang_params
 		@content = Content.new(content_params)
+		# render :text => content_params
 		if @content.valid? == true
 			@content.save
 			Content.last.update_attributes(language: Language.find_by(lang_params))

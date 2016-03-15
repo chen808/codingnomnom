@@ -57,6 +57,7 @@
 		<h4><a href="/recipe/<%= x.id %>"><%= x.title %></a></h4>
 		<h6>Created by: <%= x.user.alias %></h6>
 		<h6><a href="#"><%= x.created_at.strftime("%m/%d/%Y") %></a></h6>
+		<h1><%=x.language.lang%></h1>
 	<% end %>
 </div>
 
