@@ -21,8 +21,11 @@ class ContentsController < ApplicationController
 		# render :text => content_params
 		if @content.valid? == true
 			@content.save
-			Content.last.update_attributes(language: Language.find_by(lang_params))
-			# render :text => lang_params
+
+			# grabbing content id 
+			@recent_content_id = Content.last.update_attributes(language: Language.find_by(lang_params))
+			Content2.create(content_id:@recent_content_id, video_link:params[:youtube])
+			
 			redirect_to '/profile'
 		else
 			flash[:mistakes] = @content.errors.full_messages
