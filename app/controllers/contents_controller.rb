@@ -8,6 +8,7 @@ class ContentsController < ApplicationController
 	def show
 		# incoming id from views > contents > index.html.erb
 		@this_article = Content.find(params[:id])
+		@article_video = Content2.where(content_id:params[:id])
 		
 	end
 
@@ -22,9 +23,9 @@ class ContentsController < ApplicationController
 		if @content.valid? == true
 			@content.save
 
-			# grabbing content id 
-			@recent_content_id = Content.last.update_attributes(language: Language.find_by(lang_params))
-			Content2.create(content_id:@recent_content_id, video_link:params[:youtube])
+			Content.last.update_attributes(language: Language.find_by(lang_params))
+
+			Content2.create(content_id:@content.id, video_link:params[:youtube])
 			
 			redirect_to '/profile'
 		else
