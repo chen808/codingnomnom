@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160311024157) do
+ActiveRecord::Schema.define(version: 20160315014800) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "content2s", force: :cascade do |t|
+    t.integer  "content_id"
+    t.string   "video_link"
+    t.text     "extra_info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "content2s", ["content_id"], name: "index_content2s_on_content_id", using: :btree
 
   create_table "contents", force: :cascade do |t|
     t.integer  "user_id"
@@ -61,6 +71,7 @@ ActiveRecord::Schema.define(version: 20160311024157) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "content2s", "contents"
   add_foreign_key "contents", "users"
   add_foreign_key "likes", "contents"
 end
