@@ -40,7 +40,9 @@ class ContentsController < ApplicationController
 
 	def edit
 		@post = Content.find(params[:id])
+		@post2 = Content2.where(content:Content.find(params[:id])).first
 		
+
 	end
 
 	def update
@@ -49,6 +51,7 @@ class ContentsController < ApplicationController
 	end
 
 	def update_link
+
 	end
 
 	def destroy
