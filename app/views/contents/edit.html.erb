@@ -79,6 +79,19 @@
 			</form>
 
 
+			<form role="form" action ="/updatelink/<%= @post.id %>" method ="post">
+				<div class="form-group">
+					<label for="step10">Link:</label>
+					<input type="step10" class="form-control" id="step10" name="content2[video_link]" value = "<%= @post.step10%>">
+				</div>
+				<div class="form-group">
+					<label for="step10">Link Description:</label>
+					<input type="step10" class="form-control" id="step10" name="content2[extra_info]" value = "<%= @post.step10%>">
+				</div>
+				<button type="submit" class="btn btn-default">Update</button>
+			</form>
+
+
 		<h1>Delete Post</h1>
 			<form action = "/content/<%= @post.id %>" method="post">
     			<input type="hidden" name="_method" value="delete">
