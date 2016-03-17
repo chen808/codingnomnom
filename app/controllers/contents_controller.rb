@@ -40,11 +40,18 @@ class ContentsController < ApplicationController
 
 	def edit
 		@post = Content.find(params[:id])
+		@post2 = Content2.where(content:Content.find(params[:id])).first
+		
+
 	end
 
 	def update
 		Content.find(params[:id]).update_attributes(content_params)
 		redirect_to '/editpost/%s' % params[:id]
+	end
+
+	def update_link
+
 	end
 
 	def destroy

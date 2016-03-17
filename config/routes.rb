@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post '/users' => 'users#create'
   patch '/updatepost/:id' => 'contents#update'
   patch '/updateprofile' => 'users#update'
+  patch '/updatelink/:id' => 'content#update_link'
   delete '/content/:id' => 'contents#destroy'
   delete '/users/:id' => 'users#destroy'
   delete '/sessions/:id' => 'sessions#destroy'
