@@ -21,6 +21,9 @@
 			margin-left: 20px;
 			padding-bottom: 10px;
 		}
+		#instruction{
+			padding-top: 5px;
+		}
 	</style>
 </head>
 
@@ -51,7 +54,7 @@
 
 <!-- 5 Recent articles -->
 
-<div id="recentNoms">
+<div id="recentNoms" class="col-md-4">
 	<h2>Recent Nom Noms</h2>
 	<% @current_five_articles.each do |x| %>
 		<h4><a href="/recipe/<%= x.id %>"><%= x.title %></a></h4>
@@ -60,6 +63,14 @@
 	<% end %>
 </div>
 
+
+<div id="instruction" class="col-m-5">
+	<!-- Instructions -->
+	<h2>Instructions</h2>
+	<h4>Choose the language you are creating a recipe for</h4>
+	<h4>Try to explain your instructions as simple as possible.</h4>
+	<h4>Additionally you can add a video!</h4>
+</div>
 
 
 
