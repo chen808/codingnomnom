@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get '/editprofile' => 'users#edit'
   get '/editpost/:id' => 'contents#edit'
 
-  get '/show_ruby_pg' => 'contents#show_ruby_pg'
+  get '/show_lang_pg/:id' => 'contents#show_lang_pg'
+
 
   post '/sessions' => 'sessions#create'
   post '/create_new_recipe' => 'contents#new_recipe'

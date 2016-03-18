@@ -1,0 +1,37 @@
+	<div align="center">
+	<% @this_lang_name.each do |i| %>
+
+		<% if i.lang == "python" %>
+			<%= image_tag("programming_logos_python.png", size:"50x50", :alt => "nomnomlogo") %><h1>All Python NomsNoms</h1>
+		<% elsif i.lang == "ruby" %>
+			<%= image_tag("programming_logos_ruby.png", size:"50x50", :alt => "nomnomlogo") %><h1>All Ruby NomNoms</h1>
+		<% elsif i.lang == "javascript" %>
+			<%= image_tag("programming_logos_javascript.png", size:"50x50", :alt => "nomnomlogo") %><h1>All Javascript NomNoms</h1>
+		<% elsif i.lang == "php" %>
+			<%= image_tag("programming_logos_php.png", size:"50x50", :alt => "nomnomlogo") %><h1>All Php NomNoms</h1>
+		<% elsif i.lang == "rails" %>
+			<%= image_tag("programming_logos_rails.png", size:"50x50", :alt => "nomnomlogo") %><h1>All Rails NomNoms</h1>
+		<% elsif i.lang == "github" %>
+			<%= image_tag("programming_logos_github.png", size:"50x50", :alt => "nomnomlogo") %><h1>All Github NomNoms</h1>
+		<% elsif i.lang == "css" %>
+			<%= image_tag("programming_logos_css.png", size:"50x50", :alt => "nomnomlogo") %><h1>All CSS NomNoms</h1>
+		<% elsif i.lang == "html5" %>
+			<%= image_tag("programming_logos_html5.png", size:"50x50", :alt => "nomnomlogo") %><h1>All Html5 NomNoms</h1>
+		<% elsif i.lang == "jquery" %>
+			<%= image_tag("programming_logos_jquery.png", size:"50x50", :alt => "nomnomlogo") %><h1>All Jquery NomNoms</h1>
+		<% elsif i.lang == "mysql" %>
+			<%= image_tag("programming_logos_mysql.png", size:"50x50", :alt => "nomnomlogo") %><h1>All MySql NomNoms</h1>
+		<% end %>
+
+
+		<% @this_lang.each do |x| %>
+			<h3><a href="/recipe/<%= x.id %>"><%= x.title %></a></h3>
+			<h6><%= x.description %></h6>
+		<% end %>
+
+
+	<% end %>
+	
+
+
+</div>

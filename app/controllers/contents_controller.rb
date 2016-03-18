@@ -2,6 +2,7 @@ class ContentsController < ApplicationController
 
 	def index
 		@current_five_articles = Content.last(5)
+		@sidebar = Language.all
 		#@alias = Content.where()
 	end
 
@@ -34,9 +35,15 @@ class ContentsController < ApplicationController
 		end
 	end
 
-	def show_ruby_pg
-		@ruby_lang = Content.where(language:"ruby")
+	def show_lang_pg
+		@this_lang = Content.select("*").joins(:language).where(language_id:params[:id])
+		@this_lang_name = Language.where(id:params[:id])
+
 	end
+
+
+
+
 
 	def edit
 		@post = Content.find(params[:id])

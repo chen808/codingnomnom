@@ -35,20 +35,31 @@
 		<input type="submit" value="Nom Nom Time!" class="comment_button">
 		</div>
     
-
-	<!-- article links  -->
+	<!-- Side Bar -->
 	<div id="sideBarLang">
-		<h4><a href="/show_ruby_pg" name="ruby"><%= image_tag("programming_logos_ruby.png", size:"50x50", :alt => "ruby
-		") %> Ruby</a></h4>
-		<h4><a href="#"><%= image_tag("programming_logos_rails.png", size:"50x50", :alt => "nomnomlogo") %> Rails</a></h4>
-		<h4><a href="#"><%= image_tag("programming_logos_python.png", size:"50x50", :alt => "nomnomlogo") %> Python</a></h4>
-		<h4><a href="#"><%= image_tag("programming_logos_github.png", size:"50x50", :alt => "nomnomlogo") %> Github</a></h4>
-		<h4><a href="#"><%= image_tag("programming_logos_javascript.png", size:"50x50", :alt => "nomnomlogo") %> Javascript</a></h4>
-		<h4><a href="#"><%= image_tag("programming_logos_css.png", size:"50x50", :alt => "nomnomlogo") %> CSS</a></h4>
-		<h4><a href="#"><%= image_tag("programming_logos_html5.png", size:"50x50", :alt => "nomnomlogo") %> Html 5</a></h4>
-		<h4><a href="#"><%= image_tag("programming_logos_jquery.png", size:"50x50", :alt => "nomnomlogo") %> jQuery</a></h4>
-		<h4><a href="#"><%= image_tag("programming_logos_mysql.png", size:"50x50", :alt => "nomnomlogo") %> MySql</a></h4>
-		<h4><a href="#"><%= image_tag("programming_logos_php.png", size:"50x50", :alt => "nomnomlogo") %> Php</a></h4>
+	<% @sidebar.each do |i|  %>
+		<% if i.lang == "python" %>
+			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_python.png", size:"50x50", :alt => "nomnomlogo") %> Python</a></h4>
+		<% elsif i.lang == "ruby" %>
+			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_ruby.png", size:"50x50", :alt => "ruby") %> Ruby</a></h4>
+		<% elsif i.lang == "javascript" %>
+			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_javascript.png", size:"50x50", :alt => "nomnomlogo") %> Javascript</a></h4>
+		<% elsif i.lang == "php" %>			
+			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_php.png", size:"50x50", :alt => "nomnomlogo") %> Php</a></h4>
+		<% elsif i.lang == "rails" %>
+			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_rails.png", size:"50x50", :alt => "nomnomlogo") %> Rails</a></h4>
+		<% elsif i.lang == "github" %>
+			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_github.png", size:"50x50", :alt => "nomnomlogo") %> Github</a></h4>
+		<% elsif i.lang == "css" %>
+			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_css.png", size:"50x50", :alt => "nomnomlogo") %> CSS</a></h4>
+		<% elsif i.lang == "html5" %>
+			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_html5.png", size:"50x50", :alt => "nomnomlogo") %> Html 5</a></h4>
+		<% elsif i.lang == "jquery" %>
+			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_jquery.png", size:"50x50", :alt => "nomnomlogo") %> jQuery</a></h4>
+		<% elsif i.lang == "mysql" %>
+			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_mysql.png", size:"50x50", :alt => "nomnomlogo") %> MySql</a></h4>
+		<% end %>
+	<% end %>
 	</div>
 </form>
 
