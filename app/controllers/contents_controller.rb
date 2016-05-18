@@ -8,8 +8,9 @@ class ContentsController < ApplicationController
 
 	def show
 		# incoming id from views > contents > index.html.erb
-		@this_article = Content.find(params[:id])
+		@this_article = Content.find(36)
 		@article_video = Content2.where(content_id:params[:id])
+		# render :text => params[:id]
 		
 	end
 
@@ -36,11 +37,12 @@ class ContentsController < ApplicationController
 	end
 
 	def show_lang_pg
-		@this_lang = Content.select("*").joins(:language).where(language_id:params[:id])
+		# @this_lang = Content.select("*").joins(:language).where(language_id:params[:id])
 
-	
+		@this_lang = Content.where(language_id:params[:id])
 
 		@this_lang_name = Language.where(id:params[:id])
+		# render :json => @this_lang
 
 	end
 
