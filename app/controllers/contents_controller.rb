@@ -44,15 +44,14 @@ class ContentsController < ApplicationController
 
 	end
 
-
-
-
+	def create_link
+		Content2.create(content_id:params[:id], video_link:params[:video_link], extra_info:params[:extra_info])
+		redirect_to '/profile'
+	end
 
 	def edit
 		@post = Content.find(params[:id])
 		@post2 = Content2.where(content:Content.find(params[:id])).first
-		
-
 	end
 
 	def update
@@ -61,6 +60,7 @@ class ContentsController < ApplicationController
 	end
 
 	def update_link
+		redirect_to '/profile'
 
 	end
 

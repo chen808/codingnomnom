@@ -42,7 +42,7 @@
 		<% end %>
 
 		<!-- the following link will take user to topic page -->
-		<td><a href="#"><%= x.title %></a></td>
+		<td><a href="/recipe/<%=x.id%>"><%= x.title %></a></td>
 		<td><%= x.created_at.strftime("%m/%d/%Y") %></td>
 		<!-- the following link will allow user to edit this recipe -->
 		<td><a href="/editpost/<%= x.id %>">Edit this recipe</td>
