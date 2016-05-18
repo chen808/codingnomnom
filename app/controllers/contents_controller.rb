@@ -8,7 +8,7 @@ class ContentsController < ApplicationController
 
 	def show
 		# incoming id from views > contents > index.html.erb
-		@this_article = Content.find(36)
+		@this_article = Content.find(params[:id])
 		@article_video = Content2.where(content_id:params[:id])
 		# render :text => params[:id]
 		
