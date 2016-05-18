@@ -37,6 +37,9 @@ class ContentsController < ApplicationController
 
 	def show_lang_pg
 		@this_lang = Content.select("*").joins(:language).where(language_id:params[:id])
+
+	
+
 		@this_lang_name = Language.where(id:params[:id])
 
 	end
