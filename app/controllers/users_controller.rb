@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 	def update
 		user = User.find(current_user.id)
 		user.update_attributes(user_params)
-		redirect_to '/editprofile'
+		redirect_to '/profile'
 	end
 
 	def destroy
