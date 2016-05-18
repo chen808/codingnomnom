@@ -1,0 +1,43 @@
+
+nav {
+	background-color: black;
+	margin-bottom: 20px;
+	padding-left: 7px;
+}
+
+#register, #login{
+	margin-left: 30px;
+	background: rgba(0, 0, 0, .3);
+	padding-bottom: 20px;
+}
+a#loginButton{
+	margin-left: 40px;
+}
+
+label {
+	color: white;
+}
+
+footer {
+	display: block;
+	padding: 50px 0px;
+	background-color: black;
+	color: white;
+}
+
+#login_container {
+	height: 580px;
+	margin-top: -20px;
+	background-image: url(keyboard.jpg);
+	background-color: gray;
+	background-size: 100% 100%;
+}
+
+h3.make_white {
+	background-color: black;
+	color: white;
+	width: 180px;
+	height: 75px;
+	padding-left: 20px;
+	padding-top: 20px;
+}

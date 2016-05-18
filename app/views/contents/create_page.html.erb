@@ -1,7 +1,55 @@
-<head>
+<style type="text/css">
 
-</head>
+	label {
+		color: black;
+		margin-bottom: 10px;
+	}
 
+	#create_container {
+		display: inline-block;
+		vertical-align: top;
+		margin-left: 65px;
+		width: 800px;
+		/*border: 1px solid black;*/
+	}
+
+	.youtube_link {
+		margin-top: 30px;
+	}
+
+	.form-group h1 {
+		background-color: black;
+		color: white;
+		width: 350px;
+		height: 75px;
+		padding-left: 20px;
+		padding-top: 20px;
+	}
+
+	form {
+		margin-top: -20px;
+	}
+
+	button {
+		margin-top: 10px;
+	}
+
+	#blockquote {
+		display: inline-block;
+		vertical-align: top;
+		width: 300px;
+		border-top: 2px solid black;
+		border-bottom: 2px solid black;
+		float: right;
+	}
+		#blockquote h3 {
+			text-align: center;
+			line-height: 60px;
+		}
+
+</style>
+
+<div id='create_container' >
 <!-- flash error messages if input fields does not match validation specs -->
 <%if flash[:mistakes]%>
 	<%flash[:mistakes].each do |mes| %>
@@ -73,13 +121,22 @@
 		<label for="step10">Step 10:</label>
 		<input type="text" class="form-control"  name="content[step10]">
 
-		<label for="youtube">Add Youtube Link:</label>
+		<label for="youtube" class='youtube_link'>Add Youtube Link:</label>
 		<input type="text" class="form-control"  name="youtube">
 
 		<button type="submit" class="btn btn-default">Submit</button>
 	</div>
 </form>
 
+
+
+
+
+	<div id='blockquote'>
+		<h3>Please remember to keep each step short and concise. You got this!</h3>
+	</div>
+
+</div>
 
 
 

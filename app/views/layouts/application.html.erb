@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Codingnomnom</title>
+  <title>Coding Nom Nom</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -19,12 +19,14 @@
   <link href='https://fonts.googleapis.com/css?family=Merriweather:400,900' rel='stylesheet' type='text/css'>
 
 <style>
+
   * {
   border-radius: 0 !important;
   -moz-border-radius: 0 !important;
   font-family: 'Roboto Slab', serif;
   }
-  h2{
+
+  h2 {
     font-family: 'Merriweather', serif; 
   }
 	#topBar{
@@ -33,10 +35,22 @@
 		padding: 10px 0px;
 	}
 
-	#nomnomlogo{
+	#nomnomlogo {
 		/*margin-top: 20px;*/
-		
 	}
+
+  nav {
+    background-color: black;
+    margin-bottom: 20px;
+    padding-left: 45px;
+  }
+
+  nav a {
+    color: white;
+    margin-left: 10px;
+  }
+
+
 </style>
 
 </head>
@@ -45,34 +59,32 @@
 
 	<!-- NomNom Logo -->
 	<div id="nomnomlogo" align="center">
-	<%= image_tag("nom_logo-02.png", size:"300x250", :alt => "nomnomlogo") %>
+	<%= image_tag("nom_logo-02.png", size:"200x170", :alt => "nomnomlogo") %>
 	</div>
 
-  <h4 align="center">"If you can't explain it simply, you don't understand it well enough."<br><br>- Albert Einstein</h4>
+  <h5 align="center">"If you can't explain it simply, you don't understand it well enough."<br><br>- Albert Einstein</h5>
 
 
 </div><!-- End of 'topbar' container -->
 
 
   <% if current_user %>
-    <nav class="navbar navbar-inverse">
+    <nav>
       <div class="container-fluid">
-        <div class="navbar-header">
-        </div>
+        <div class="navbar-header"></div>
         <ul class="nav navbar-nav">
-
-    	   <li><a href = '/'>Homepage</a></li>
-         <li><a href= '/profile'>Profile</a></li>
-         <li><a href = '/newrecipe'>Create Recipe</a></li>
-         <li><a href = '/editprofile'>Edit Profile</a></li>
-        <li><a href="/sessions/<%=current_user.id%>" data-method="delete"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+          <li><a href = '/'>Homepage</a></li>
+          <li><a href= '/profile'>Profile</a></li>
+          <li><a href = '/newrecipe'>Create Recipe</a></li>
+          <li><a href = '/editprofile'>Edit Profile</a></li>
+          <li><a href="/sessions/<%=current_user.id%>" data-method="delete"></span> Logout</a></li>
         </ul>
       </div>
     </nav>
 
-<% else %>
+  <% else %>
 
- <nav class="navbar navbar-inverse">
+   <nav>
       <div class="container-fluid">
         <div class="navbar-header">
         </div>
@@ -81,14 +93,15 @@
         	<li><a href='/'>Homepage</a></li>
        		<li><a href='/login' id="loginButton">Login</a></li>
 
-
         </ul>
       </div>
     </nav>
 
- <% end %>
+   <% end %>
 
 <%= yield %>
+
+
 
 </body>
 </html>

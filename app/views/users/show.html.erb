@@ -1,10 +1,36 @@
+<style type="text/css">
+	#user_dashboard_container {
+		margin-left: 80px;
+	}
+
+	#user_dashboard_container h2 {
+		background-color: black;
+		color: white;
+		width: 390px;
+		height: 75px;
+		padding-left: 20px;
+		padding-top: 20px;
+	}
+
+	#user_dashboard_container h4 {
+		margin-bottom: 50px;
+	}
+
+	td {
+		padding-bottom: 20px;
+	}
+
+
+</style>
+
+<div id='user_dashboard_container'>
 <!-- User Dashboard -->
 <h2>Hi, <%=current_user.name %></h2>
+<h4>Here are the nom nom you created!</h4>
 
 
 <!-- Show the recipe user has created and button to edit -->
-<table class="col-md-6">
-	<h4>Here are the nom nom you created!</h4>
+<table class="col-md-9">
 	<thead>
 		<tr>
 			<th>Language</th>
@@ -52,6 +78,7 @@
 	</tbody>
 </table>
 
+</div>
 
 
 

@@ -1,5 +1,32 @@
+<style type="text/css">
+
+	label {
+		color: black;
+	}
+
+	.container {
+		margin-left: 70px;
+		margin-bottom: 20px	;
+	}
+
+	.container h3 {
+		background-color: black;
+		color: white;
+		width: 263px;
+		height: 75px;
+		padding-left: 20px;
+		padding-top: 20px;
+	}
+
+	form.delete_button {
+		margin-top: 20px	;
+	}
+
+
+</style>
+
 <div class = "container">
-	<div class = "row">
+	<div class = "row" >
 		<div class ="col-sm-3">	
 			<h3>Edit your profile</h3>
 			<form role="form" action ="/updateprofile" method ="post">
@@ -17,13 +44,13 @@
 					<label for="email">Email address:</label>
 					<input type="email" class="form-control" id="email" name="user[email]" value = "<%= @user.email%>">
 				</div>
-				<button type="submit" class="btn btn-default">Update</button>
+				<button type="submit" class="btn btn-success">Update</button>
 			</form>
-			<h1>Delete Account</h1>
-			<form action="/users/<%= @user.id %>" method="post">
+
+			<form action="/users/<%= @user.id %>" method="post" class='delete_button'>
     			<input type="hidden" name="_method" value="delete">
       			<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token %>">
-      			<button type="submit" class="btn btn-default" >Delete Account</button>
+      			<button type="submit" class="btn btn-danger" >Delete Account?</button>
     		</form>
     	</div>
     </div>
