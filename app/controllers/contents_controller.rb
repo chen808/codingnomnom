@@ -60,8 +60,9 @@ class ContentsController < ApplicationController
 	end
 
 	def create_link
-		Content2.create(content_id:params[:id], video_link:params[:video_link], extra_info:params[:extra_info])
-		redirect_to '/profile'
+		@hello = Content2.create(content_id:params[:id], video_link:params[:video_link], extra_info:params[:extra_info])
+		# redirect_to '/profile'
+		# render :json => @hello
 	end
 
 	def edit
@@ -75,6 +76,8 @@ class ContentsController < ApplicationController
 	end
 
 	def update_link
+		@contentt = Content2.find(params[:id]).update_attributes(link_params)
+		# render :json => @contentt
 		redirect_to '/profile'
 
 	end
@@ -91,6 +94,7 @@ class ContentsController < ApplicationController
 	def lang_params
 		params.require(:language).permit(:lang)
 	end
-
-	
+	def link_params
+		params.require(:content2).permit(:video_link, :extra_info)
+	end
 end
