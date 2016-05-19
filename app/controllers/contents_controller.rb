@@ -10,7 +10,30 @@ class ContentsController < ApplicationController
 		# incoming id from views > contents > index.html.erb
 		@this_article = Content.find(params[:id])
 		@article_video = Content2.where(content_id:params[:id])
-		# render :text => params[:id]
+
+		video_code = @article_video[0].video_link.split('embed/').last
+		@stringg = ""
+		# @video_code.each do |i|
+		# 	if i == "/" then
+		# 		break
+		# 	else 
+		# 		string += i
+		# 	end
+		# end
+		# for i in video_code
+		# 	stringg += i
+		# end
+		video_code.split("").each do |i|
+			if i === '"'
+				break
+			else
+				@stringg += i
+			end
+		end
+		#render :json => @stringg
+		#render :text => params[:id]
+		#render :json => @article_video
+
 		
 	end
 

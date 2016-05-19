@@ -16,6 +16,7 @@
 
 <div id="article">
 
+
 <!-- article title -->
 <h1><%= @this_article.title %></h1>
 
@@ -67,6 +68,12 @@
 
 <% if @this_article.step10.present? then %>
 	<h2>Step 10: <%= @this_article.step10 %></h2>
+<% end %>
+
+<!-- If any youtube video is present then show it -->
+<% if @stringg.present? then %>
+	
+<iframe width="560" height="349" src="<%= "http://www.youtube.com/embed/"+@stringg %>"></iframe>
 <% end %>
 
 
