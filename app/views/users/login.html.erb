@@ -1,73 +1,88 @@
+<style type="text/css">
+	#login_container {
+		margin-top: -50px;
+	}
 
+	#motto h1{
+		text-align: right;
+		color: white;
+		padding-top: 300px;
+		padding-right: 20px;
+		/*border: 1px solid orange;*/
+	}
+</style>
 
 <!-- For CSS, look at assets/stylesheets/login.css -->
 <div id='login_container'>
-<div class ="col-sm-2" id="register">
+	<div class ="col-sm-2" id="register">
 
+		<h3 class='make_white'>Register</h3>
 
-	<h3 class='make_white'>Register</h3>
+		<form role="form" action ="/users" method ="post">
+			<input name ="authenticity_token" value ="<%= form_authenticity_token%>" type="hidden">
+		  <div class="form-group">
+		 	<label for="first_name">Name:</label>
+		    <input type="text" class="form-control" id="name" name="user[name]">
+		  </div>
+		  <div class="form-group">
+		 	<label for="alias">Alias:</label>
+		    <input type="text" class="form-control" id="alias" name="user[alias]">
+		  </div>
+		  <div class="form-group">
+		 	<label for="email">Email address:</label>
+		    <input type="email" class="form-control" id="email" name="user[email]">
+		  </div>
+		  <div class="form-group">
+		    <label for="pwd">Password:</label>
+		    <input type="password" class="form-control" id="pwd" name="user[password]">
+		  </div>
+		  <div class="form-group">
+		    <label for="pwd">Password Confirmation:</label>
+		    <input type="password" class="form-control" id="pwd_c" name="user[password_confirmation]">
+		  </div>
+		  <button type="submit" class="btn btn-default">Register</button>
+		</form>
 
-	<form role="form" action ="/users" method ="post">
-		<input name ="authenticity_token" value ="<%= form_authenticity_token%>" type="hidden">
-	  <div class="form-group">
-	 	<label for="first_name">Name:</label>
-	    <input type="text" class="form-control" id="name" name="user[name]">
-	  </div>
-	  <div class="form-group">
-	 	<label for="alias">Alias:</label>
-	    <input type="text" class="form-control" id="alias" name="user[alias]">
-	  </div>
-	  <div class="form-group">
-	 	<label for="email">Email address:</label>
-	    <input type="email" class="form-control" id="email" name="user[email]">
-	  </div>
-	  <div class="form-group">
-	    <label for="pwd">Password:</label>
-	    <input type="password" class="form-control" id="pwd" name="user[password]">
-	  </div>
-	  <div class="form-group">
-	    <label for="pwd">Password Confirmation:</label>
-	    <input type="password" class="form-control" id="pwd_c" name="user[password_confirmation]">
-	  </div>
-	  <button type="submit" class="btn btn-default">Register</button>
-	</form>
-
-	<!-- flash error messages if input fields does not match validation specs -->
-	<%if flash[:mistakes]%>
-		<%flash[:mistakes].each do |mes| %>
-			<p style="color: gray;"><%=mes%></p>			
+		<!-- flash error messages if input fields does not match validation specs -->
+		<%if flash[:mistakes]%>
+			<%flash[:mistakes].each do |mes| %>
+				<p style="color: gray;"><%=mes%></p>			
+			<%end%>
 		<%end%>
-	<%end%>
-		
-</div><!-- ends register container -->
-		
-		
-<div class ="col-sm-2" id="login">	
-	<h3 class='make_white'>Login</h3>
-	<form role="form" action ="/sessions" method ="post">
+			
+	</div><!-- ends register container -->
+			
+			
+	<div class ="col-sm-2" id="login">	
+		<h3 class='make_white'>Login</h3>
+		<form role="form" action ="/sessions" method ="post">
 
-		<input name ="authenticity_token" value ="<%= form_authenticity_token%>" type="hidden">
+			<input name ="authenticity_token" value ="<%= form_authenticity_token%>" type="hidden">
 
-	  <div class="form-group">
-	    <label for="email">Email address:</label>
-	    <input type="email" class="form-control" id="email" name="email">
-	  </div>
+		  <div class="form-group">
+		    <label for="email">Email address:</label>
+		    <input type="email" class="form-control" id="email" name="email">
+		  </div>
 
-	  <div class="form-group">
-	    <label for="pwd">Password:</label>
-	    <input type="password" class="form-control" id="pwd" name="password">
-	  </div>
+		  <div class="form-group">
+		    <label for="pwd">Password:</label>
+		    <input type="password" class="form-control" id="pwd" name="password">
+		  </div>
 
-	  <button type="submit" class="btn btn-default">Log In</button>
-	</form>
+		  <button type="submit" class="btn btn-default">Log In</button>
+		</form>
 
-	<%if flash[:loginmistakes]%>
-		<%flash[:loginmistakes].each do |mes| %>
-		<p style="color: gray;"><%=mes%></p>
+		<%if flash[:loginmistakes]%>
+			<%flash[:loginmistakes].each do |mes| %>
+			<p style="color: gray;"><%=mes%></p>
+			<%end%>
 		<%end%>
-	<%end%>
+	</div>
 
-</div>
+	<div id='motto'>
+		<h1 align="center">"If you can't explain it simply, you don't understand it well enough."<br><br>- Albert Einstein</h1>
+	</div>
+
 </div>
 
 <footer align='center'>&copy Copyright 2016 Coding Nom Nom</footer>

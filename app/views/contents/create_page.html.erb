@@ -6,10 +6,9 @@
 	}
 
 	#create_container {
-		display: inline-block;
 		vertical-align: top;
-		margin-left: 65px;
-		width: 800px;
+		margin: 0 auto;
+		width: 1000px;
 		/*border: 1px solid black;*/
 	}
 
@@ -34,22 +33,70 @@
 		margin-top: 10px;
 	}
 
+	h3, li {
+		color: white;
+	}
+
 	#blockquote {
 		display: inline-block;
 		vertical-align: top;
-		width: 300px;
-		border-top: 2px solid black;
-		border-bottom: 2px solid black;
+		width: 550px;
+		padding-left: 20px;
+/*		border-top: 1px solid black;
+		border-bottom: 1px solid black;*/
+		background-color: red;
 		float: right;
+		border-top: 20px solid black;
+		border-bottom: 20px solid black;
 	}
 		#blockquote h3 {
-			text-align: center;
-			line-height: 60px;
+			margin-left: -30px;
 		}
+
+		h3.instruction {
+			text-align: center;
+			line-height: 30px;
+			border-bottom: 1px solid black;
+			padding-top: 60px;
+			padding-bottom: 60px;
+			width: 300px;
+			margin: 0 auto;
+		}
+
+		h3{
+			width: 400px;
+			margin-top: 60px;
+		}
+
+		.youtube_instruction li {
+			width: 400px;
+			padding: 20px;
+			list-style-type: none;
+			color: white;
+			margin-bottom: 30px;
+		}
+
+		.style_image {
+			margin-left: -5px;
+			margin-top: 10px;
+		}
+
+		.style_image2 {
+			margin-top: 10px;
+		}
+
+
+
+
+
+
+
+
+
 
 </style>
 
-<div id='create_container' >
+<div id='create_container'>
 <!-- flash error messages if input fields does not match validation specs -->
 <%if flash[:mistakes]%>
 	<%flash[:mistakes].each do |mes| %>
@@ -124,7 +171,7 @@
 		<label for="youtube" class='youtube_link'>Add Youtube Link:</label>
 		<input type="text" class="form-control"  name="youtube">
 
-		<button type="submit" class="btn btn-default">Submit</button>
+		<button type="submit" class="btn btn-success">Submit</button>
 	</div>
 </form>
 
@@ -132,9 +179,26 @@
 
 
 
-	<div id='blockquote'>
+	<div id='blockquote' align='center'>
 		<h3>Please remember to keep each step short and concise. You got this!</h3>
+
+		<h3>To add a YouTube video link</h3>
+		<ul class='youtube_instruction'>
+			<li>Go to your YouTube video page</li>
+
+			<li>Look at the following section:
+				<%= image_tag("youtube_01.png", size:"310x50", :alt => "nomnomlogo", :class => "style_image2") %>
+			</li>
+			
+			<li>Click on 'Share', then click on 'Embed', you should see the following:
+				<%= image_tag("youtube_02.png", size:"380x70", :alt => "nomnomlogo", :class => "style_image") %>
+			</li>
+			
+			<li>Copy the code and paste it into 'Add Youtube Link:':</li>
+		</ul>
 	</div>
+
+
 
 </div>
 

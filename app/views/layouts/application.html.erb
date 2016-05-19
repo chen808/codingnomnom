@@ -36,18 +36,36 @@
 	}
 
 	#nomnomlogo {
-		/*margin-top: 20px;*/
+		padding: 20px 0px;
 	}
 
+  ul {
+    margin-left: -70px;
+  }
+
+
+  ul li {
+    display: inline-block;
+    padding: 20px 10px 10px 10px;
+  }
+
   nav {
+    height: 70px;
     background-color: black;
-    margin-bottom: 20px;
-    padding-left: 45px;
+    margin-bottom: 50px;
   }
 
   nav a {
     color: white;
-    margin-left: 10px;
+  }
+
+  nav a:hover {
+    color: gray;
+  }
+
+  nav.not_user_log {
+    /*border: 1px solid orange;*/
+    padding-left: 80px;
   }
 
 
@@ -62,8 +80,6 @@
 	<%= image_tag("nom_logo-02.png", size:"200x170", :alt => "nomnomlogo") %>
 	</div>
 
-  <h5 align="center">"If you can't explain it simply, you don't understand it well enough."<br><br>- Albert Einstein</h5>
-
 
 </div><!-- End of 'topbar' container -->
 
@@ -71,24 +87,22 @@
   <% if current_user %>
     <nav>
       <div class="container-fluid">
-        <div class="navbar-header"></div>
-        <ul class="nav navbar-nav">
+        
+        <ul align='center' class='nav_top_bar'>
           <li><a href = '/'>Homepage</a></li>
           <li><a href= '/profile'>Profile</a></li>
           <li><a href = '/newrecipe'>Create Recipe</a></li>
           <li><a href = '/editprofile'>Edit Profile</a></li>
           <li><a href="/sessions/<%=current_user.id%>" data-method="delete"></span> Logout</a></li>
         </ul>
+
       </div>
     </nav>
 
   <% else %>
 
-   <nav>
-      <div class="container-fluid">
-        <div class="navbar-header">
-        </div>
-        <ul class="nav navbar-nav">
+   <nav class='not_user_log'>
+        <ul>
     
         	<li><a href='/'>Homepage</a></li>
        		<li><a href='/login' id="loginButton">Login</a></li>

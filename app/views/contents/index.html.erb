@@ -11,6 +11,7 @@
 
 		#recentNoms{
 			display: inline-block;
+			vertical-align: top;
 			margin-left: 20px;
 			margin-top: -20px;
 			/*border: 1px solid black;*/
@@ -21,20 +22,23 @@
 			color: white;
 			width: 390px;
 			height: 75px;
-			padding-left: 20px;
 			padding-top: 20px;
 		}
 
 		form{
-			width: 300px;
+			width: 240px;
 			display: inline-block;
 			/*border: 1px solid red;*/
 		}
 
 		#recentNoms h4{
 			padding-top: 20px;
-
 		}
+
+		.make_red {
+			color: red;
+		}
+
 
 		#topicFinder{
 			margin-left: 20px;
@@ -54,7 +58,6 @@
 			color: white;
 			width: 390px;
 			height: 75px;
-			padding-left: 20px;
 			padding-top: 20px;
 
 						
@@ -75,74 +78,80 @@
 		}
 
 		#main_pg_container {
-			margin-left: 50px;
+			/*margin-left: 50px;*/
+			margin: 0 auto;
 		}
 
 	</style>
 </head>
 
 
-<div id='main_pg_container'>
-<form role="form" class="col-md-3">
-	<!-- Dropdown Menu Here, will take user to language specific page -->
-		<input name='authenticity_token' value="<%=form_authenticity_token %>" type="hidden">
-		<div id="topicFinder">
-	    	<label for='name'>Looking for a particular topic? <br><input type='text' name='name' id='name'></label><br>
-			<input type="submit" value="Nom Nom Time!" class="comment_button">
-		</div>
-    
-	<!-- Side Bar -->
-	<div id="sideBarLang">
-	<% @sidebar.each do |i|  %>
-		<% if i.lang == "python" %>
-			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_python.png", size:"50x50", :alt => "nomnomlogo") %> Python</a></h4>
-		<% elsif i.lang == "ruby" %>
-			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_ruby.png", size:"50x50", :alt => "ruby") %> Ruby</a></h4>
-		<% elsif i.lang == "javascript" %>
-			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_javascript.png", size:"50x50", :alt => "nomnomlogo") %> Javascript</a></h4>
-		<% elsif i.lang == "php" %>			
-			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_php.png", size:"50x50", :alt => "nomnomlogo") %> Php</a></h4>
-		<% elsif i.lang == "rails" %>
-			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_rails.png", size:"50x50", :alt => "nomnomlogo") %> Rails</a></h4>
-		<% elsif i.lang == "github" %>
-			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_github.png", size:"50x50", :alt => "nomnomlogo") %> Github</a></h4>
-		<% elsif i.lang == "css" %>
-			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_css.png", size:"50x50", :alt => "nomnomlogo") %> CSS</a></h4>
-		<% elsif i.lang == "html5" %>
-			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_html5.png", size:"50x50", :alt => "nomnomlogo") %> Html 5</a></h4>
-		<% elsif i.lang == "jquery" %>
-			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_jquery.png", size:"50x50", :alt => "nomnomlogo") %> jQuery</a></h4>
-		<% elsif i.lang == "mysql" %>
-			<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_mysql.png", size:"50x50", :alt => "nomnomlogo") %> MySql</a></h4>
+<div id='main_pg_container' align='center'>
+
+	<form role="form" align='left'>
+		<!-- Dropdown Menu Here, will take user to language specific page -->
+			<input name='authenticity_token' value="<%=form_authenticity_token %>" type="hidden">
+			<div id="topicFinder">
+		    	<label for='name'>Looking for a particular topic? <br><input type='text' name='name' id='name'></label><br>
+				<input type="submit" value="Nom Nom Time!" class="comment_button">
+			</div>
+	    
+		<!-- Side Bar -->
+		<div id="sideBarLang" align='left'>
+		<% @sidebar.each do |i|  %>
+			<% if i.lang == "python" %>
+				<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_python.png", size:"50x50", :alt => "nomnomlogo") %> Python</a></h4>
+			<% elsif i.lang == "ruby" %>
+				<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_ruby.png", size:"50x50", :alt => "ruby") %> Ruby</a></h4>
+			<% elsif i.lang == "javascript" %>
+				<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_javascript.png", size:"50x50", :alt => "nomnomlogo") %> Javascript</a></h4>
+			<% elsif i.lang == "php" %>			
+				<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_php.png", size:"50x50", :alt => "nomnomlogo") %> Php</a></h4>
+			<% elsif i.lang == "rails" %>
+				<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_rails.png", size:"50x50", :alt => "nomnomlogo") %> Rails</a></h4>
+			<% elsif i.lang == "github" %>
+				<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_github.png", size:"50x50", :alt => "nomnomlogo") %> Github</a></h4>
+			<% elsif i.lang == "css" %>
+				<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_css.png", size:"50x50", :alt => "nomnomlogo") %> CSS</a></h4>
+			<% elsif i.lang == "html5" %>
+				<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_html5.png", size:"50x50", :alt => "nomnomlogo") %> Html 5</a></h4>
+			<% elsif i.lang == "jquery" %>
+				<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_jquery.png", size:"50x50", :alt => "nomnomlogo") %> jQuery</a></h4>
+			<% elsif i.lang == "mysql" %>
+				<h4><a href="/show_lang_pg/<%= i.id%>"><%= image_tag("programming_logos_mysql.png", size:"50x50", :alt => "nomnomlogo") %> MySql</a></h4>
+			<% end %>
 		<% end %>
-	<% end %>
+		</div>
+	</form>
+
+	<!-- 5 Recent articles -->
+	<div id="recentNoms">
+		<h2>Recent Nom Noms</h2>
+		<% @current_five_articles.each do |x| %>
+			<h4 class='make_red'><a href="/recipe/<%= x.id %>"><%= x.title %></a></h4>
+			<h6>Created by: <%= x.user.alias %></h6>
+			<h6><%= x.language.lang %> | <a href="#"><%= x.created_at.strftime("%m/%d/%Y") %></a></h6>
+		<% end %>
 	</div>
-</form>
 
-<!-- 5 Recent articles -->
-<div id="recentNoms" class="col-md-4">
-	<h2>Recent Nom Noms</h2>
-	<% @current_five_articles.each do |x| %>
-		<h4><a href="/recipe/<%= x.id %>"><%= x.title %></a></h4>
-		<h6>Created by: <%= x.user.alias %></h6>
-		<h6><%= x.language.lang %>| <a href="#"><%= x.created_at.strftime("%m/%d/%Y") %></a></h6>
-	<% end %>
-</div>
-
-
-<div id="instruction" class="col-m-5">
 	<!-- Instructions -->
-	<h2>Instructions</h2>
+	<div id="instruction">
+		<h2>Instructions</h2>
 
-	<ol>
-		<li>Choose the language you are creating a recipe for</li>
-		<li>Try to explain your instructions as simple as possible.</li>
-		<li>Additionally you can add a video!</li>
-	</ol>
+		<ol align='left'>
+			<li>Choose the language you are creating a recipe for</li>
+			<li>Try to explain your instructions as simple as possible.</li>
+			<li>Additionally you can add a video!</li>
+		</ol>
+	</div>
+
+
+
 </div>
 
 
 
-</div>
+
+
 
 

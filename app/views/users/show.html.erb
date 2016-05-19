@@ -1,6 +1,10 @@
 <style type="text/css">
+
 	#user_dashboard_container {
-		margin-left: 80px;
+		/*margin-left: 80px;*/
+		width: 900px;
+		margin: 0 auto;
+		/*border: 1px solid black;*/
 	}
 
 	#user_dashboard_container h2 {
@@ -16,6 +20,11 @@
 		margin-bottom: 50px;
 	}
 
+	table {
+		width: 900px;
+		/*border: 1px solid orange;*/
+	}
+
 	td {
 		padding-bottom: 20px;
 	}
@@ -24,59 +33,60 @@
 </style>
 
 <div id='user_dashboard_container'>
-<!-- User Dashboard -->
-<h2>Hi, <%=current_user.name %></h2>
-<h4>Here are the nom nom you created!</h4>
+
+	<!-- User Dashboard -->
+	<h2>Hi, <%=current_user.name %></h2>
+	<h4>Here are the nom nom you created!</h4>
 
 
-<!-- Show the recipe user has created and button to edit -->
-<table class="col-md-9">
-	<thead>
-		<tr>
-			<th>Language</th>
-			<th>Topic</th>
-			<th>Day Created</th>
-			<th>Action</th>
-		</tr>
-	</thead>
+	<!-- Show the recipe user has created and button to edit -->
+	<table>
+		<thead>
+			<tr>
+				<th>Language</th>
+				<th>Topic</th>
+				<th>Day Created</th>
+				<th>Action</th>
+			</tr>
+		</thead>
 
-	<tbody>	
-	<% @current_user_recipes.each do |x| %>
-		<!-- following if statements checks to see what language and brings up the respective logo -->
-		<tr>
+		<tbody>	
+		<% @current_user_recipes.each do |x| %>
+			<!-- following if statements checks to see what language and brings up the respective logo -->
+			<tr>
 
-		<% if x.language.lang == "python" %>
-			<td><a href="/show_lang_pg/1"><%= image_tag("programming_logos_python.png", size:"50x50", :alt => "python") %> <%= x.language.lang %></a></td>
-		<% elsif x.language.lang == "ruby" %>
-			<td><a href="/show_lang_pg/2"><%= image_tag("programming_logos_ruby.png", size:"50x50", :alt => "ruby") %> <%= x.language.lang %></a></td>
-		<% elsif x.language.lang == "rails" %>
-			<td><a href="/show_lang_pg/5"><%= image_tag("programming_logos_rails.png", size:"50x50", :alt => "rails") %> <%= x.language.lang %></a></td>
-		<% elsif x.language.lang == "github" %>
-			<td><a href="/show_lang_pg/6"><%= image_tag("programming_logos_github.png", size:"50x50", :alt => "gihub") %> <%= x.language.lang %></a></td>
-		<% elsif x.language.lang == "javascript" %>
-			<td><a href="/show_lang_pg/3"><%= image_tag("programming_logos_javascript.png", size:"50x50", :alt => "javascript") %> <%= x.language.lang %></a></td>
-		<% elsif x.language.lang == "css" %>
-			<td><a href="/show_lang_pg/7"><%= image_tag("programming_logos_css.png", size:"50x50", :alt => "css") %> <%= x.language.lang %></a></td>
-		<% elsif x.language.lang == "html" %>
-			<td><a href="/show_lang_pg/8"><%= image_tag("programming_logos_html5.png", size:"50x50", :alt => "html") %> <%= x.language.lang %></a></td>
-		<% elsif x.language.lang == "jquery" %>
-			<td><a href="/show_lang_pg/9"><%= image_tag("programming_logos_jquery.png", size:"50x50", :alt => "jquery") %> <%= x.language.lang %></a></td>
-		<% elsif x.language.lang == "php" %>
-			<td><a href="/show_lang_pg/4"><%= image_tag("programming_logos_php.png", size:"50x50", :alt => "php") %> <%= x.language.lang %></a></td>
-		<% elsif x.language.lang == "mysql" %>
-			<td><a href="/show_lang_pg/10"><%= image_tag("programming_logos_mysql.png", size:"50x50", :alt => "mysql") %> <%= x.language.lang %></a></td>
+			<% if x.language.lang == "python" %>
+				<td><a href="/show_lang_pg/1"><%= image_tag("programming_logos_python.png", size:"50x50", :alt => "python") %> <%= x.language.lang %></a></td>
+			<% elsif x.language.lang == "ruby" %>
+				<td><a href="/show_lang_pg/2"><%= image_tag("programming_logos_ruby.png", size:"50x50", :alt => "ruby") %> <%= x.language.lang %></a></td>
+			<% elsif x.language.lang == "rails" %>
+				<td><a href="/show_lang_pg/5"><%= image_tag("programming_logos_rails.png", size:"50x50", :alt => "rails") %> <%= x.language.lang %></a></td>
+			<% elsif x.language.lang == "github" %>
+				<td><a href="/show_lang_pg/6"><%= image_tag("programming_logos_github.png", size:"50x50", :alt => "gihub") %> <%= x.language.lang %></a></td>
+			<% elsif x.language.lang == "javascript" %>
+				<td><a href="/show_lang_pg/3"><%= image_tag("programming_logos_javascript.png", size:"50x50", :alt => "javascript") %> <%= x.language.lang %></a></td>
+			<% elsif x.language.lang == "css" %>
+				<td><a href="/show_lang_pg/7"><%= image_tag("programming_logos_css.png", size:"50x50", :alt => "css") %> <%= x.language.lang %></a></td>
+			<% elsif x.language.lang == "html" %>
+				<td><a href="/show_lang_pg/8"><%= image_tag("programming_logos_html5.png", size:"50x50", :alt => "html") %> <%= x.language.lang %></a></td>
+			<% elsif x.language.lang == "jquery" %>
+				<td><a href="/show_lang_pg/9"><%= image_tag("programming_logos_jquery.png", size:"50x50", :alt => "jquery") %> <%= x.language.lang %></a></td>
+			<% elsif x.language.lang == "php" %>
+				<td><a href="/show_lang_pg/4"><%= image_tag("programming_logos_php.png", size:"50x50", :alt => "php") %> <%= x.language.lang %></a></td>
+			<% elsif x.language.lang == "mysql" %>
+				<td><a href="/show_lang_pg/10"><%= image_tag("programming_logos_mysql.png", size:"50x50", :alt => "mysql") %> <%= x.language.lang %></a></td>
+			<% end %>
+
+			<!-- the following link will take user to topic page -->
+			<td><a href="/recipe/<%=x.id%>"><%= x.title %></a></td>
+			<td><%= x.created_at.strftime("%m/%d/%Y") %></td>
+			<!-- the following link will allow user to edit this recipe -->
+			<td><a href="/editpost/<%= x.id %>">Edit this recipe</td>
+			</tr>
 		<% end %>
 
-		<!-- the following link will take user to topic page -->
-		<td><a href="/recipe/<%=x.id%>"><%= x.title %></a></td>
-		<td><%= x.created_at.strftime("%m/%d/%Y") %></td>
-		<!-- the following link will allow user to edit this recipe -->
-		<td><a href="/editpost/<%= x.id %>">Edit this recipe</td>
-		</tr>
-	<% end %>
-
-	</tbody>
-</table>
+		</tbody>
+	</table>
 
 </div>
 
