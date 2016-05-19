@@ -16,7 +16,9 @@
 
 <div id="article">
 
+<% if current_user.id == @user %>
 <a href = "/editpost/<%= @this_article.id%>">Update Recipe</a>
+<% end %>
 <!-- article title -->
 <h1><%= @this_article.title %></h1>
 

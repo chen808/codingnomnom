@@ -9,6 +9,7 @@ class ContentsController < ApplicationController
 	def show
 		# incoming id from views > contents > index.html.erb
 		@this_article = Content.find(params[:id])
+		@user = Content.find(params[:id]).user_id
 		@article_video = Content2.where(content_id:params[:id])
 		# render :json => @article_video.first.video_link
 		if @article_video.first.video_link != ""
@@ -22,6 +23,7 @@ class ContentsController < ApplicationController
 				end
 			end
 		end
+		# render :json => @user
 		
 	end
 
