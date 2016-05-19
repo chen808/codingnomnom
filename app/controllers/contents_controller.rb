@@ -9,31 +9,21 @@ class ContentsController < ApplicationController
 	def show
 		# incoming id from views > contents > index.html.erb
 		@this_article = Content.find(params[:id])
+		@user = Content.find(params[:id]).user_id
 		@article_video = Content2.where(content_id:params[:id])
-
-		video_code = @article_video[0].video_link.split('embed/').last
-		@stringg = ""
-		# @video_code.each do |i|
-		# 	if i == "/" then
-		# 		break
-		# 	else 
-		# 		string += i
-		# 	end
-		# end
-		# for i in video_code
-		# 	stringg += i
-		# end
-		video_code.split("").each do |i|
-			if i === '"'
-				break
-			else
-				@stringg += i
+		# render :json => @article_video.first.video_link
+		if @article_video.first.video_link != ""
+			video_code = @article_video[0].video_link.split('embed/').last
+			@stringg = ""
+			video_code.split("").each do |i|
+				if i === '"'
+					break
+				else
+					@stringg += i
+				end
 			end
 		end
-		#render :json => @stringg
-		#render :text => params[:id]
-		#render :json => @article_video
-
+		# render :json => @user
 		
 	end
 
@@ -70,8 +60,9 @@ class ContentsController < ApplicationController
 	end
 
 	def create_link
-		Content2.create(content_id:params[:id], video_link:params[:video_link], extra_info:params[:extra_info])
+		@hello = Content2.create(content_id:params[:id], video_link:params[:video_link], extra_info:params[:extra_info])
 		redirect_to '/profile'
+		# render :json => @hello
 	end
 
 	def edit
@@ -81,10 +72,12 @@ class ContentsController < ApplicationController
 
 	def update
 		Content.find(params[:id]).update_attributes(content_params)
-		redirect_to '/editpost/%s' % params[:id]
+		redirect_to '/recipe/%s' % params[:id]
 	end
 
 	def update_link
+		@contentt = Content2.find(params[:id]).update_attributes(link_params)
+		# render :json => @contentt
 		redirect_to '/profile'
 
 	end
@@ -101,6 +94,7 @@ class ContentsController < ApplicationController
 	def lang_params
 		params.require(:language).permit(:lang)
 	end
-
-	
+	def link_params
+		params.require(:content2).permit(:video_link, :extra_info)
+	end
 end
