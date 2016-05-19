@@ -61,7 +61,7 @@ class ContentsController < ApplicationController
 
 	def create_link
 		@hello = Content2.create(content_id:params[:id], video_link:params[:video_link], extra_info:params[:extra_info])
-		# redirect_to '/profile'
+		redirect_to '/profile'
 		# render :json => @hello
 	end
 
